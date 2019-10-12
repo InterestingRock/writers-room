@@ -1,0 +1,437 @@
+
+
+
+ h1, h2, h3 {
+   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+ }
+
+ h4 {
+   margin: .5em auto .5em auto;
+ }
+
+ button {
+   cursor: pointer;
+ }
+
+button, input {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+main {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.description {
+  display: none;
+}
+
+.floatright {
+  float:right;
+}
+
+#previous > ul > li:hover + .description,
+#previous:hover          + .description,
+#achieveList > li:hover  + .description,
+#achieveList > li > ul > li:hover  + .description{
+  background-color: white;
+  display: block;
+  position: relative;
+  left: 5%;
+  border: 1px solid black;
+  max-width: 60%;
+  padding: 3px;
+  z-index: 10;
+}
+
+#wordOfHr > h3:hover     + .description{
+  background-color: white;
+  display: block;
+  position: absolute;
+  margin-bottom: -20px;
+  border: 1px solid black;
+  max-width: 25%;
+  padding: 3px;
+  z-index: 10;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.invisible {
+  display:none
+}
+
+.italics {
+  font-style: italic;
+}
+
+ .margin10 {
+  margin: 0 10%;
+ }
+
+.nav {
+  background-color: black;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  height: 26px;
+  padding: 0 0%;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.nav li {
+  cursor: pointer;
+  display: inline;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav li:hover {
+  background-color: gray;
+}
+
+ul .nav {
+  list-style-type: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.visible {
+  display: inline-block;
+}
+
+.flexColumn {
+  display:flex;
+  flex-direction: column;
+}
+
+.rightFlex {
+    align-items: flex-end
+}
+
+.round {
+  border-radius: 50%;
+}
+
+
+
+/*-------------------------------------------------------
+Header: title
+-----------------------------------------------------*/
+
+h1 {
+  text-align: center;
+  border-bottom: 6px solid black;
+  padding-bottom: 15px;
+  width:100%;
+  font-size: 3em;
+}
+/*--------------------------------------------------------------------
+Left column: info, stats, status, options
+----------------------------------------------------------------------*/
+.left {
+  width: 30%;
+}
+
+.titles {
+  font-style: italic;
+  text-transform: capitalize;
+  display: block;
+}
+
+#trapStuff {
+  text-align: center;
+  border: black solid 1px;
+  z-index: 10
+}
+
+.uniques {
+  margin: auto
+}
+
+#achieveList > li > ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ---------------------------------------------
+Centre column: getting letters, making words
+----------------------------------------------*/
+
+.centre {
+  margin: 0 1%;
+  border-left: 3px double black;
+  border-right: 3px double black;
+  padding: 0 2.5%;
+  width: 30%;
+  overflow:auto;
+  max-height: 100%;
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.centering {
+  text-align: center;
+}
+
+#getLetter {
+  background-color: black;
+  color: white;
+  height: 100px;
+  width: 70%;
+  border-radius: 16px;
+  font-size: 2.2em;
+}
+
+#letterSubtitle {
+  box-sizing: border-box;
+  font-size: 0.8em;
+  margin: 5px 0px 2em 0px;
+  border-bottom: 1px solid black;
+}
+
+#lettersBox {
+  font-size: 1.75em;
+  font-family: monospace;
+  min-height: 1.75em;
+}
+#border {
+  border: 3px solid black;
+  margin: 20px 12px 12px 12px;
+  min-height: 20px;
+  padding: 3% 5%;
+}
+#border > h2 {
+  margin: 0
+}
+
+#newWord {
+  background-color: beige;
+  font-size: 18px;
+  height: 40px;
+  margin: 10px auto;
+  padding: 5px;
+  width: 60%;
+}
+
+#checkWord {
+  height: 50px;
+  width: 30%;
+}
+
+.container {
+   display: flex;
+   flex-direction: row-reverse;
+   padding-left: 50%;
+}
+
+.container > button {
+   flex-grow: 1
+}
+
+#hrLength {
+  text-decoration: underline;
+}
+
+#hrLength:hover {
+  cursor:pointer
+}
+
+.hrlyWord {
+  padding: 0;
+  font-size: 2em;
+  margin: 0.25em auto;
+}
+
+.hrlyWord li {
+  box-sizing: border-box;
+}
+
+#notes {
+  align: justify;
+  padding: 0 5%
+}
+#notes li {
+  margin: 9px auto;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+/*---------------------------------------------------------------------
+Right column: Publish for money
+------------------------------------------------------------------*/
+.right.column {
+  text-align: left;
+  width: 33%;
+}
+
+#purchase button, #publish button {
+  background-color: white;
+  border-radius: 10px;
+  min-height: 100px;
+  margin: 3px;
+  text-align: left;
+}
+
+#publishContainer {
+  width: 100%
+}
+#publishUpgrades {
+  flex-direction: column;
+  width: 35%
+}
+#publishUpgrades > button {
+  width: 100%;
+  background-color: grey;
+}
+#publishContainer > button:hover + .description {
+  background-color: white;
+  display: block;
+  position: absolute;
+  right: 4%;
+  top: 20.5%;
+  margin-bottom: -20px;
+  border: 1px solid black;
+  max-width: 12%;
+  padding: 3px;
+  z-index: 10;
+}
+
+#publishUpgrades > button:hover + .description,
+#holyGrail:hover + .description {
+  background-color: white;
+  display: block;
+  position: absolute;
+  right: 15%;
+  top: 20.5%;
+  margin-bottom: -20px;
+  border: 1px solid black;
+  max-width: 13%;
+  padding: 3px;
+  z-index: 10;
+}
+
+#holyGrail {
+  width: 100%;
+  position: relative;
+}
+
+#purchase button {
+  width: 100%;
+}
+
+
+/* #poem::first-letter {
+  font-family: 'Sacramento', cursive;
+  font-size: 2em;
+}
+#textbook::first-letter {
+  font-family: 'IM Fell DW Pica', serif;
+  font-size: 2em
+}
+
+#publish > button > div {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-style: italic;
+  font-size: 1em
+}*/
+
+#purchase > button:hover + .description{
+  background-color: white;
+  display: block;
+  right: 30.4%;
+  position: absolute;
+  border: 1px solid black;
+  top: 20.5%;
+  max-width: 9%;
+  padding: 3px;
+  z-index: 10;
+}
+/*---------------------------------------------------------------------
+Right column: Equip
+------------------------------------------------------------------*/
+#equipment {
+  width: 100%
+}
+
+.flexColumn.bordered > div {
+  margin: 2px;
+}
+
+.bordered {
+  border: 1px black solid;
+  padding: 5px;
+  margin: 3px;
+  width: 100%;
+}
+
+#equipment> .flexColumn > .bordered > button:hover + .description {
+  background-color: white;
+  display: block;
+  position: absolute;
+  right: 29.3%;
+  top: 30.5%;
+  margin-bottom: -20px;
+  border: 1px solid black;
+  max-width: 13%;
+  padding: 3px;
+  z-index: 10;
+}
+
+#goodLetterButton:hover + .description{
+  background-color: white;
+  display: block;
+  position: absolute;
+  right: 29.3%;
+  top: 42.5%;
+  margin-bottom: -20px;
+  border: 1px solid black;
+  max-width: 13%;
+  padding: 3px;
+  z-index: 10;
+}
+
+#equipment> .flexColumn > .flex > .bordered > button:hover + .description{
+  background-color: white;
+  display: block;
+  position: absolute;
+  right: 29.2%;
+  top: 60.5%;
+  margin-bottom: -20px;
+  border: 1px solid black;
+  max-width: 13%;
+  padding: 3px;
+  z-index: 10;
+}
+
+#speSWord, #speAWord, #speLWord, #speJWord {
+  border: 2px black solid;
+  z-index: 1000;
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  background-color: white;
+  padding: 10px;
+}

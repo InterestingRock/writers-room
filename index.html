@@ -1,0 +1,397 @@
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+
+    <head>
+      <!-- Links CSS -->
+      <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica|Sacramento" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style.css" />
+      <meta charset="utf-8">
+      <title>Writer's Room</title>
+    </head>
+
+    <body onload = "displayAll()">
+
+  <header>
+
+      <h1> Writer's Room </h1>
+
+  </header>
+
+  <main>
+
+  <div class = "left side column">
+
+    <ul class = "nav">
+      <li  class = "uppercase" onClick = "showCurrent()">Current </li>
+      <li  class = "uppercase" onClick = "showStats()"> Stats </li>
+      <li  class = "uppercase" onClick = "showOptions()"> Options </li>
+    </ul>
+
+    <br />
+    <div class = "margin10">
+      <div class = "visible" id = "current">
+        <div id = moneyCount> You currently have $0.00.</div> <br/>
+        <div id= "previous"> Published works:
+          <ul>
+            <li id = "noPub"> <i> None. </i> (Publish things in PUBLISH tab on the right)
+            <li id = "poemList" class = "invisible"> Poems (<span id = "poemCount">0</span>)
+              <ul class = "titles" id = "poemTitles"> </ul> </li>
+            <div class = "description">  earning <b> $<span class = "earnings" id = "poemEarnings">0</span> per second </b> for you in royalties </div>
+            <li id = "childList" class = "invisible"> Children's Books (<span id = "childrenCount">0</span>)
+              <ul class = "titles" id = "childTitles"> </ul> </li>
+            <div class = "description">  earning <b> $<span class = "earnings" id = "childEarnings">0</span> per second </b>  for you in royalties </div>
+            <li  id = "storyList" class = "invisible"> Short Stories (<span id = "storyCount">0</span>)
+              <ul class = "titles" id = "storyTitles"> </ul> </li>
+            <div class = "description">  earning <b> $<span class = "earnings" id = "storyEarnings">0</span> per second </b>  for you in royalties </div>
+            <li  id = "journList" class = "invisible"> Journal Articles (<span id = "journalCount">0</span>)
+              <ul class = "titles" id = "journTitles"> </ul> </li>
+            <div class = "description">  earning <b> $<span class = "earnings" id = "journEarnings">0</span> per second </b>  for you in royalties </div>
+            <li  id = "novelList" class = "invisible"> Novels (<span id = "novelCount">0</span>)
+              <ul class = "titles" id = "novelTitles"> </ul> </li>
+            <div class = "description">  earning <b> $<span class = "earnings" id = "novelEarnings">0</span> per second </b>  for you in royalties </div>
+            <li id = "textList" class = "invisible"> Textbooks (<span id = "textbookCount">0</span>)
+              <ul class = "titles" id = "textTitles"> </ul> </li>
+              <div class = "description">  earning <b> $<span class = "earnings" id = "textEarnings">0</span> per second </b>  for you in royalties </div>
+            <li id = "seriesList" class = "invisible"> Book Series (<span id = "seriesCount">0</span>)
+              <ul class = "titles" id = "seriesTitles"> </ul> </li>
+            <div class = "description">  earning <b> $<span class = "earnings" id = "seriesEarnings">0</span> per second </b>  for you in royalties </div>
+            <li id = "encyList" class = "invisible"> Encyclopaedias (<span id = "encyCount">0</span>)
+              <ul class = "titles" id = "encyTitles"> </ul> </li>
+            <div class = "description">  earning <b> $<span class = "earnings" id = "encyEarnings">0</span> per second </b>  for you in royalties </div>
+          </ul>
+        </div>
+        <div class = 'description'> You're earning $<span id = 'moneyRate'>0.00</span> per second in royalties</div>
+        <div class = "wordRelated">
+          <span id= "totalWordCount"> You currently have 0 words. </span> <span id = "wordCount"> </span>
+        </div>
+        <div id = equipRelated> <br /> Your equipment:
+          Find your equipment in the Equip Tab on the right
+
+        </div>
+        <h3> Notes </h3>
+        <ul id = 'notes'> </ul>
+      </div>
+
+      <div class = "invisible" id = "stats">
+        This is the stats page. <br/> <br/>
+        Letters earned this game: <span id = "statsLet"> 0 </span> <br />
+        Letters made by hand this game: <span id = "statsSelfL"> 0 </span> <br />
+        Letters thrown away this game: <span id = "statsLetT"> 0 </span> <br />
+
+        Words earned this game: <span id = "statsWor"> 0 </span> <br />
+        Short words earned this game: <span id = "statsSho"> 0 </span> <br />
+        Average words earned this game: <span id = "statsAve"> 0 </span> <br />
+        Long words earned this game: <span id = "statsLon"> 0 </span> <br />
+        Jumbo words earned this game: <span id = "statsJum"> 0 </span> <br />
+        Words made by hand this game: <span id = "statsSelfW"> 0 </span> <br />
+
+        Total number of works published this game: <span id = "statsPub"> 0 </span> <br />
+        Total number of equipment purchased this game: <span id = "statsPur"> 0 </span> <br />
+
+        Total money earned this game: <span id = "statsMon"> 0 </span> <br />
+
+        Total Words of the Hours typed: <span id = "statsHR"> 0 </span> <br />
+        Total Short Words of the Hours typed: <span id = "statsShoHR"> 0 </span> <br />
+        Total Average Words of the Hours typed: <span id = "statsAveHR"> 0 </span> <br />
+        Total Long Words of the Hours typed: <span id = "statsLonHR"> 0 </span> <br />
+        Total Jumbo Words of the Hours typed: <span id = "statsJumHR"> 0 </span> <br />
+        Total Random Words of the Hours typed: <span id = "statsRanHR"> 0 </span> <br />
+
+        <h3> Your Achievements: </h3>
+        <ul id = "achieveList">
+          <li id = "noAchieves"> <i> None </i> </li>
+          <li> <ul id = "other">
+                  <li id = "fullBoxAch"></li>
+                  <li id = "ABCsAch"></li>
+               </ul> </li>
+          <li> <ul id = "letterAchieves">   </ul> </li>
+          <li> <ul id = "moneyAchieves">    </ul> </li>
+          <li> <ul id = "wordsAchieves">    </ul> </li>
+          <li> <ul id = "uniquesAchieves">  </ul> </li>
+        </ul>
+
+        <h3>Your Dictionary (contains all <span id = uniqueAmount> </span> of your unique words):</h3>  <p id = "uniques"> </p>
+      </div>
+
+      <div class = "invisible" id = "options">
+        <button id = "save" onClick = "save()"> Save </button>
+        <button id = "save" onClick = "load()"> Load </button>
+        <button id = "save" onClick = "clearSave()"> Clear Save </button>
+
+        <h2> Help </h2>
+        <h3> Basics </h3>
+        <p> The aim of the game is to write and publish <i> The Unabridged History of Everything </i>. </p>
+        <p>  For this you need words. To make words, you need letters. </p>
+        <p>  Make letters by pressing the big button. (To help you, vowels are more likely to be made :D)</p>
+        <p>  Use those letters to make words by typing in the textbox under the box where your letters go. You can see how many words you have on the "Current" tab.</p>
+        <p>  Use words to publish stuff. Start by publishing poems!</p>
+        <p>  Publishing stuff earns you royalties. Upgrade your stuff to earn more royalties.</p>
+        <p>  Spend your royalties on equipment or other stuff (see "Equipment" tab and "Purchase" tab on the right. More upgrades coming soon). </p>
+
+        <h3> Equipment </h3>
+        <p> There are many types of equipment. For most you can upgrade the rate (which increases the amount of words/letters earned) and the tick-rate (increases how often the equipment does its thing).
+          Equipments that make words are grouped to have the same tickrate.</p>
+        <p> The random word finders will pick a random word from your dictionary (see "Stats" for list of words in your dictionary) and try make that word from the letters in your box.</p>
+        <p> The specific word finders will look for a word you specify. To pick a word, press the specific word finder in the equipment tab (literally click the name of the equipment). A thing should pop up.  </p>
+
+      </div>
+  </div>
+
+  </div>
+  <div class = "centre column" onkeypress = "focusInput()">
+
+
+    <div class = "centering">
+      <button id="getLetter" onClick="getLetter(thisRun.lettersPC * thisRun.purchased.clicksPC.multiplier)"> Get a letter! </button>
+    </div>
+    <div id = "border">
+      <h2> Your Letter Box </h2>
+      <p id = "letterSubtitle" class = "centering"> (The box where your letters are kept, currently holding <span id = 'lettersCount'></span>/<span id = 'letterBoxSize'>100.</span>) </p>
+      <p id='lettersBox'></p>
+      <div class = 'container'>
+        <button id = "emptyBox" onClick = "emptyBox()"> Empty </button>
+        <button id = "shuffle" onClick = "shuffleLetters()"> Shuffle </button>
+        <button id = 'sort' onClick = 'sortLetters()'> Sort </button>
+      </div>
+    </div>
+
+    <div class='centering'>
+      <input type="text" id="newWord" name = "newWord" placeholder="Make Word Here" onClick='this.select();'>
+      <button id='checkWord' onclick='checkWord()'> Enter Word </button> </div>
+
+    <hr/>
+
+    <div class = 'centering'>
+      <div class = 'invisible' id = 'wordOfHr'>
+        <h3> <span id = 'hrLength' onClick = "toggleWordOfHour()">Random</span> Word of The Hour </h3>
+        <div class = 'description'> If you make any  of the words of the hour, you get bonus words! You can make the words as many times as you want, but your equipment cannot get this bonus. </div>
+        <ul id = 'sChosenWord' class = 'invisible hrlyWord'> </ul>
+        <ul id = 'aChosenWord' class = 'invisible hrlyWord'> </ul>
+        <ul id = 'lChosenWord' class = 'invisible hrlyWord'> </ul>
+        <ul id = 'jChosenWord' class = 'invisible hrlyWord'> </ul>
+        <ul id = 'rChosenWord' class = 'visible hrlyWord'> </ul>
+        <hr />
+      </div>
+    </div>
+  </div>
+
+  <div class = "right side column">
+
+    <ul class = "nav">
+      <li  class = "uppercase" onClick = "showPublish()" > Publish  </li>
+      <li  class = "uppercase" onClick = "showEquipment()" class = 'invisible'> equipment  </li>
+      <li  class = "uppercase" onClick = "showPurchase()"> purchase </li>
+    </ul>
+
+    <br />
+
+    <div class = "margin10">
+
+      <div id="publish" class = "flex">
+        <div id = 'publishContainer' class = 'flexColumn'>
+        <button class = "invisible" id = "poem" onClick = "publish(thisRun.published.poem, poemCost, 'poemTitles', 'poemList')">
+          <h4> Poem  </h4> <div class = "italics" id = "poemCost"> Cost: Any 10 words </div>
+        </button>
+        <div id = "poemDescr" class = "description"> </div>
+        <button class = "invisible" id = "children" onClick = "publishChild()">
+           <h4> Children's Book </h4> <div class = "italics" id = "childrenCost"> Cost: 100 short words </div>
+        </button>
+        <div id = "childDescr" class = "description"> </div>
+        <button class = "invisible" id = "story" onClick = "publish(thisRun.published.story, storyCost, 'storyTitles', 'storyList')">
+          <h4> Short Story </h4> <div class = "italics" id = "storyCost"> Cost: Any 2000 words </div>
+        </button>
+        <div id = "storyDescr" class = "description"> </div>
+        <button class = "invisible" id = "journal" onClick = "publishJourn()">
+          <h4>Academic Journal Article </h4> <div class = "italics" id = "journalCost"> Cost: 10,000 average words</div>
+        </button>
+        <div id = "journalDescr" class = "description"> </div>
+        <button class = "invisible" id = "novel" onClick = "publish(thisRun.published.novel, novelCost, 'novelTitles', 'novelList')">
+          <h4>Novel </h4> <div class = "italics" id = "novelCost"> Cost: Any 80,000 words </div>
+        </button>
+        <div id = "novelDescr" class = "description"> </div>
+        <button class = "invisible" id = "textbook" onClick = "publish(thisRun.published.text, textCost, 'textTitles', 'textList')">
+          <h4>Textbook </h4><div class = "italics" id = "textbookCost"> Cost: 200,000 long words </div>
+        </button>
+        <div id = "textDescr" class = "description"> </div>
+        <button class = "invisible" id = "series" onClick = "publish(thisRun.published.series, seriesCost, 'seriesTitles', 'seriesList')">
+          <h4>Book Series </h4><div class = "italics" id = "seriesCost"> Cost: Any 1,400,000 </div>
+        </button>
+        <div id = "seriesDescr" class = "description"> </div>
+        <button class = "invisible" id = "ency" onClick = "publishEncy()">
+          <h4> Encyclopaedia Set </h4> <div class = "italics" id = "encyCost"> Cost: 5,000,000 jumbo words </div>
+        </button>
+        <div id = "encyDescr" class = "description"> </div>
+        <button id = "holyGrail" onClick = "getHoly(1)">
+          <h4><i> The Unabridged History of Everything; Past, Present and Future </i> </h4>
+          <div class = "italics">  10,000,000 short words <br/>
+            10,000,000 average words <br />
+            10,000,000 long words <br/>
+            10,000,000 jumbo words </div>
+          </button>
+          <div id = "holyDescr" class = "description"> It's very succinct. Write this book to win the game! </div>
+        <br />
+      </div>
+
+        <div id = 'publishUpgrades'>
+          <button class = "invisible" id = "poemUp" onClick = "levelUp(thisRun.published.poem)">
+            <h4> Sign autographs</h4> <div class = "italics"> Cost: $<span id = 'poemUpC'></span> </div>
+          </button>
+          <div class = description> <span id = 'poemUpD'> </span> <br /> Doubles royalties earned from Poems </div>
+          <button class = "invisible" id = "childUp" onClick = "levelUp(thisRun.published.child)">
+            <h4> Talk to Children</h4> <div class = "italics"> Cost: $<span id = 'childUpC'></span> </div>
+          </button>
+          <div class = description> <span id = 'childUpD'> </span> <br /> Doubles royalties earned from Children's books </div>
+          <button class = "invisible" id = "storyUp" onClick = "levelUp(thisRun.published.story)">
+            <h4> Listen to your editor</h4> <div class = "italics"> Cost: $<span id = 'storyUpC'></span> </div>
+          </button>
+          <div class = description> <span id = 'storyUpD'> </span> <br /> Doubles royalties earned from Short Stories </div>
+          <button class = "invisible" id = "journUp" onClick = "levelUp(thisRun.published.journ)">
+            <h4> Do more research </h4> <div class = "italics"> Cost: $<span id = 'journUpC'></span> </div>
+          </button>
+          <div class = description> <span id = 'journalUpD'> </span> <br /> Doubles royalties earned from Academic Journal Articles </div>
+          <button class = "invisible" id = "novelUp" onClick = "levelUp(thisRun.published.novel)">
+            <h4>Use a Thesaurus</h4> <div class = "italics"> Cost: $<span id = 'novelUpC'></span> </div>
+          </button>
+          <div class = description> <span id = 'novelUpD'> </span> <br /> Doubles royalties earned from Novels </div>
+          <button class = "invisible" id = "textbookUp" onClick = "levelUp(thisRun.published.textbook)">
+            <h4>Meet university lecturers </h4> <div class = "italics"> Cost: $<span id = 'textUpC'></span> </div>
+          </button>
+          <div class = description> <span id = 'textUpD'> </span> <br /> Doubles royalties earned from Textbooks </div>
+          <button class = "invisible" id = "seriesUp" onClick = "levelUp(thisRun.published.series)">
+            <h4>Read to fans</h4> <div class = "italics"> Cost: $<span id = 'seriesUpC'></span> </div>
+          </button>
+          <div class = description> <span id = 'seriesUpD'> </span> <br /> Doubles royalties earned from Book Series </div>
+          <button class = "invisible" id = "encyUp" onClick = "levelUp(thisRun.published.ency)">
+            <h4>Fact-check</h4> <div class = "italics"> Cost: $<span id = 'encyUpC'></span> </div>
+          </button>
+          <div class = description> <span id = 'encyUpD'> </span> <br /> Doubles royalties earned from Encyclopaedia Sets </div>
+        </div>
+        </div>
+
+
+      <div id = "purchase" class = "invisible">
+
+        <button id = "boot" onClick = "buy(thisRun.purchased.shuffle, .5)" class = "invisible">
+          Huge Boot <div class = "italics"> Cost: $0.50 </div>  </button>
+          <div class = "description"> It's one size fits all, and heavy enough to, say, shake a letter box, hint hint. </div>
+        <button id = "beaver" onClick = "buy(thisRun.purchased.shift, 3)" class = "invisible">
+          Obedient Beaver <div class = "italics"> Cost: $3.00 </div>  </button>
+          <div class = "description"> What a sweet beaver! When you tell it to "shift", it slaps its large tail! </div>
+        <button id = "lever" onClick = "buy(thisRun.purchased.empty, 10)" class = "invisible">
+          Lever <div class = "italics"> Cost: $10.00 </div></button>
+          <div class = "description"> It's a long stick over a wooden pivot. You don't understand why it's so expensive, but maybe it'll help you lift your box. </div>
+        <button id = "shelf" onClick = "buy(thisRun.purchased.sort, 100)" class = "invisible"> Repeater
+          Shelving Shelf <div class = "italics"> Cost: $100.00 </div>  </button>
+          <div class = "description"> How does a shelf shelve? With great difficulty. It doesn't even have arms. However, it's very good with the alphabet.</div>
+      </div>
+
+    <div id = "equipment" class = "invisible">
+    <h3> Equipment Settings </h3>
+      <div class = 'flexColumn'>
+        <div id = 'active' class = 'flexColumn bordered'> For the ones who write by hand
+          <button id = "clickPCButton" onClick = "buy(thisRun.purchased.clicksPC, 40)">
+            Over-Compensating Mouse <div class = "italics"> Cost: $40.00 </div></button>
+            <div class = "description"> The mouse is so embarrased it ate your cheese that it's trying to help you at every opportunity. It'll click your button whenever you do. </div>
+          <div id = "clickPCEquip" class = "invisible"><button class = 'round' onClick = 'equip.toggle("clicksPC")'> on/off </button> <span id = "clicksPCName"> </span> <button onClick = "equip.level('clicksPC')"> Increase multiplier <i> Cost: $<span id = "clicksPCRUp"> </span> </i></button> </div>
+          <button id = "wPWButton" onClick = "buy(thisRun.purchased.wordsPW, 90)">
+            Copycat  <div class = "italics"> Cost: $90.00 </div></button>
+          <div class = "description"> It mocks everything you say in a funny voice. At least it's good at spelling. Doubles your words made when you type. </div>
+          <div id = "wPWEquip" class = "invisible"><button class = 'round' onClick = 'equip.toggle("wordsPW")'> on/off </button> <span id = "wordsPWName"></span> <button onClick = "equip.level('wordsPW')"> Increase multiplier <i> Cost: $<span id = "wordsPWRUp"> </span> </i></button> </div> </div>
+
+        <div class = 'flexColumn bordered'> auto letters
+          <button id = "ranLetterButton" onClick = "buy(thisRun.purchased.ranLetter, 1)">
+            Bouncy Ball <div class = "italics"> Cost: $1.00 </div></button>
+            <div class = "description"> The pink rubber ball just bounces up and endlessly. It's such a shame it's not on a button right now. </div>
+          <div id = "ranlEq"  class = "invisible">
+            <button class = 'round' onClick = 'equip.toggle("ranLetter")'> on/off </button> Bouncy Ball <button onClick = "equip.level('ranLetter')"> Increase rate <i> Cost: $<span id = "ranLetterRUp"> </span> </i> </button>
+            <button onClick = "equip.downTick('ranl')"> Decrease tick <i> Cost: $<span id = "ranLetterTdown"> </span></i> </button>
+            <button id = "goodLetterButton" onClick = "buy(thisRun.purchased.goodLetter, 1)">
+              Fingerprinter <div class = "italics"> Cost: $75.00 </div>  </button>
+            <div class = "description"> By imprinting a fingerprint on a Bouncy Ball, it'll have a 20% chance of passing as your finger when it presses the button! </div></div>
+          <button id = "expandButton" onClick = "equip.expandBox()">
+            Box Enhancer <div class = "italics"> Cost: $<span id = "boxUp"></span> </div></button>
+            <div class = "description"> Makes your box larger to fit more letters. Just avoid drug tests. </div>
+        </div>
+
+        <div class = 'flex'>
+        <div id = 'autoRanWords' class = 'flexColumn bordered'> random words
+          <button id = "ranButton" onClick = "buy(thisRun.purchased.ran, 5)">
+            Dart  <div class = "italics"> Cost: $5.00 </div></button>
+            <div class = "description"> The Dart is throwing itself into a dartboard. It looks bored. Perhaps it'd be happier if it could throw itself at your dictionary. </div>
+          <div id = "ranEquip" class = "invisible"> <button class = 'round' onClick = 'equip.toggle("ran")'> on/off </button> Dart <button onClick = "equip.level('ran')"> Increase rate <i> Cost: $<span id = "ranRUp"> </span> </i></button> </div>
+          <button id = "ranSButton" onClick = "buy(thisRun.purchased.ranS, 50)">
+            Educated Ant <div class = "italics"> Cost: $50.00 </div> </button>
+            <div class = "description"> The Ant has a Master's degree in English, specialising in 18th Century literature. Now it makes words for money. Due to its size, it can only make short ones. </div>
+          <div id = "ranSEquip" class = "invisible"> <button class = 'round' onClick = 'equip.toggle("ranS")'> on/off </button> Educated Ant <button onClick = "equip.level('ranS')"> Increase rate <i> Cost: $<span id = "ransRUp"> </span> </i></button> </div>
+          <button id = "ranAButton" onClick = "buy(thisRun.purchased.ranA, 200)">
+            Sparklers <div class = "italics"> Cost: $200.00 </div> </button>
+            <div class = "description"> Love drawing words in the air, but run out of spark after 7 letters. Makes random average words from your dictionary. </div>
+          <div id = "ranAEquip" class = "invisible"> <button class = 'round' onClick = 'equip.toggle("ranA")'> on/off </button> Sparkler <button onClick = "equip.level('ranA')"> Increase rate <i> Cost: $<span id = "ranaRUp"> </span> </i></button> </div>
+          <button id = "ranLButton" onClick = "buy(thisRun.purchased.ranL, 1500)">
+            Curious Kangaroo <div class = "italics"> Cost: $1,500.00 </div> </button>
+            <div class = "description">Happily jumps from word to word, but can only see the long ones. Makes random long words from your dictionary. </div>
+          <div id = "ranLEquip" class = "invisible"> <button class = 'round' onClick = 'equip.toggle("ranL")'> on/off </button> Curious Kangaroo <button onClick = "equip.level('ranL')"> Increase rate <i> Cost: $<span id = "ranlRUp"> </span> </i></button> </div>
+          <button id = "ranJButton" onClick = "buy(thisRun.purchased.ranJ, 10000)">
+            Sesquipedaliac <div class = "italics"> Cost: $10,000 </div> </button>
+            <div class = "description"> They think they're so knowledgeable. Makes random jumbo words from your dictionary. </div>
+          <div id = "ranJEquip" class = "invisible"> <button class = 'round' onClick = 'equip.toggle("ranJ")'> on/off </button> Sesquipedaliac <button onClick = "equip.level('ranJ')"> Increase rate <i> Cost: $<span id = "ranjRUp"> </span> </i></button> </div>
+        <button id = 'autoRanTick' class = "invisible" onClick = "equip.downTick('ran')"> Decrease autoRan Ticks <i> Cost: $<span id = "ranTdown"> </span> </i></button> </div></div>
+
+        <div class = 'flex'>
+        <div id = 'autoSpeWords' class = 'flexColumn bordered'> specific words
+          <button id = "speSButton" onClick = "buy(thisRun.purchased.speS, 250)">
+            SpeS <div class = "italics"> Cost: $250.00 </div>  </button>
+            <div class = "description"> Makes a short word of your choice from your dictionary every second.</div>
+          <div id = "speSEquip" class = "invisible"> <button class = 'round' onClick = 'equip.toggle("speS")'> on/off </button> <span onClick = "toggle('speSWord')"> SpecifiedS </span> <button onClick = "equip.level('ranS')"> Increase rate <i> Cost: $<span id = "speSRUp"> </span> </i></button> </div>
+          <button id = "speAButton" onClick = "buy(thisRun.purchased.speA, 2000)">
+            SpeA <div class = "italics"> Cost: $2,000.00 </div>  </button>
+            <div class = "description"> Makes an average word of your choice from your dictionary every second.</div>
+          <div id = "speSWord" class = "invisible"> Specific Short Word Finder <br/>
+            Pick a short word from your dictionary <br/>
+            <input type = "text" name = "speSInput" id = "speSInput"> </input> <button id = "speSCheck" onClick = "equip.speCheck(1, 3, 'speS', 'speSInput', 'speSNote')"> Find this word. </button> <br/>
+            Your SpeS is looking for <span id="currentspeS"> no word </span> every 5 seconds.
+              <p id = "speSNote"> </p>
+            <button onClick = "equip.toggle('speS')"> Turn Off </button> <button onClick = "hide('speSWord')"> Close </button>
+          </div>
+          <button id = "speLButton" onClick = "buy(thisRun.purchased.speL, 12000)">
+            SpeL <div class = "italics"> Cost: $12,000 </div>  </button>
+            <div class = "description"> Makes a long word of your choice from your dictionary every second.</div>
+          <div id = "speAEquip" class = "invisible"> <button class = 'round' onClick = 'equip.toggle("speA")'> on/off </button> <span onClick = "toggle('speAWord')"> SpecifiedA </span> <button onClick = "equip.level('ranA')"> Increase rate <i> Cost: $<span id = "speARUp"> </span> </i></button> </div>
+          <div id = "speAWord" class = "invisible"> Specific Average Word Finder <br/>
+            Pick an average word from your dictionary <br/>
+            <input type = "text" name = "speAInput" id = "speAInput"> </input> <button id = "speACheck" onClick = "equip.speCheck(4, 7, 'speA', 'speAInput', 'speANote')"> Find this word. </button> <br/>
+            Your SpeA is looking for <span id="currentspeA"> no word </span> every 5 seconds.
+              <p id = "speANote"> </p>
+            <button onClick = "equip.toggle('speA')"> Turn On/Off </button> <button onClick = "hide('speAWord')"> Close </button>
+          </div>
+          <button id = "speJButton" onClick = "buy(thisRun.purchased.speJ, 100000)">
+            SpeJ <div class = "italics"> Cost: $100,000 </div>  </button>
+            <div class = "description"> Makes a jumbo word of your choice from your dictionary every second.</div>
+          <div id = "speLEquip" class = "invisible"> <button class = 'round' onClick = 'equip.toggle("speL")'> on/off </button> <span onClick = "toggle('speLWord')"> SpecifiedL </span> <button onClick = "equip.level('ranL')"> Increase rate <i> Cost: $<span id = "speLRUp"> </span> </i></button> </div>
+          <div id = "speLWord" class = "invisible"> Specific Long Word Finder <br/>
+            Pick a long word from your dictionary <br/>
+            <input type = "text" name = "speLInput" id = "speLInput"> </input> <button id = "speLCheck" onClick = "equip.speCheck(8, 11, 'speL', 'speLInput', 'speLNote')"> Find this word. </button> <br/>
+            Your SpeL is looking for <span id="currentspeL"> no word </span> every 5 seconds.
+              <p id = "speLNote"> </p>
+            <button onClick = "equip.toggle('speL')"> Turn On/Off </button> <button onClick = "hide('spelWord')"> Close </button>
+          </div>
+          <div id = "speJEquip" class = "invisible"> <button class = 'round' onClick = 'equip.toggle("speJ")'> on/off </button> <span onClick = "toggle('speJWord')"> SpecifiedJ </span> <button onClick = "equip.level('ranJ')"> Increase rate <i> Cost: $<span id = "speJRUp"> </span> </i></button> </div>
+          <div id = "speJWord" class = "invisible"> Specific Jumbo Word Finder <br/>
+            Pick a long word from your dictionary <br/>
+            <input type = "text" name = "speJInput" id = "speJInput"> </input> <button id = "speJCheck" onClick = "equip.speCheck(8, 11, 'speJ', 'speJInput', 'speJNote')"> Find this word. </button> <br/>
+            Your SpeJ is looking for <span id="currentspeJ"> no word </span> every 5 seconds.
+              <p id = "speJNote"> </p>
+              <button onClick = "equip.toggle('speJ')"> Turn On/Off </button> <button onClick = "hide('speJWord')"> Close </button>
+          </div>
+        <button id = 'autoSpeTick' class = "invisible" onClick = "equip.downTick('spe')"> Decrease autoSpeWords Ticks <i> Cost: $<span id = "speTdown"> </span> </i></button> </div></div>
+
+      </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="dictionary.js"> </script>
+    <script type="text/javascript" src="main.js"> </script>
+    </body>
+
+  </html>
